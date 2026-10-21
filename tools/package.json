@@ -1,0 +1,7 @@
+{
+  "name": "validate4rt-tools",
+  "private": true,
+  "description": "Regenerates assets/img/membermap-world.svg and membermap-europe.svg from the city list in build-map.js",
+  "scripts": { "build-map": "node build-map.js && cp membermap-world.svg membermap-europe.svg ../assets/img/" },
+  "dependencies": { "d3-geo": "^3.1.1", "topojson-client": "^3.1.0", "topojson-simplify": "^3.0.3", "world-atlas": "^2.0.2" }
+}

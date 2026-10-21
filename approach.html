@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>How we work — VALIDATE consortium</title>
+  <meta name="description" content="The seven commitments behind every VALIDATE validation: models travel, data stay put; pre-registered analysis plans; at least three independent institutions; open code; aggregated results; discrimination and calibration; evidence for societies, not guidelines.">
+  <link rel="canonical" href="https://validate4rt.org/approach.html">
+  <meta name="theme-color" content="#002650">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How we work — VALIDATE consortium">
+  <meta property="og:description" content="The seven commitments behind every VALIDATE validation of a radiotherapy decision-support model.">
+  <meta property="og:url" content="https://validate4rt.org/approach.html">
+  <meta property="og:image" content="https://validate4rt.org/assets/img/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="VALIDATE consortium home">
+      <img class="logo-light" src="assets/img/validate-logo-navy.png" alt="VALIDATE" width="942" height="372">
+      <img class="logo-dark" src="assets/img/validate-logo-white.png" alt="" width="942" height="372" aria-hidden="true">
+      <span class="brand-text">VALIdation of Decision support models for rAdioThErapy</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="index.html#members">Members</a></li>
+        <li><a href="approach.html" aria-current="page">How we work</a></li>
+        <li><a href="projects.html">Validation projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h1 class="page-title">How we work</h1>
+        <p>VALIDATE runs external validations of published radiotherapy decision-support models to a fixed set of rules. The rules answer the barriers that have kept most models from ever being tested outside the data they were built on.</p>
+      </div>
+
+      <!-- ============ Barriers ============ -->
+      <h2 id="barriers">What stands in the way</h2>
+      <div class="principle">
+        <div class="prose">
+          <h3>Most models are never externally validated</h3>
+          <p>A 2025 Cochrane review of prognostic models for radiation-induced complications in head-and-neck cancer found 592 published models. For 480 of them, 81%, no external validation had ever been performed. Only nine models had been validated in two or more independent cohorts, and even for those, calibration was not always reported.<sup><a href="#ref-cochrane">1</a></sup> Published and trustworthy in a new clinic are very different things.</p>
+        </div>
+        <div class="prose">
+          <h3>Calibration is rarely tested</h3>
+          <p>A high AUC says that a model ranks patients in the right order. It says nothing about whether the probabilities it reports are right, and treatment thresholds depend on the probabilities. Two models can have identical discrimination and make very different probability claims, as the two illustrative calibration plots below show.</p>
+        </div>
+      </div>
+      <div class="figure-row figure-row--wide">
+        <figure class="figure">
+          <svg class="diagram diagram--plot" viewBox="0 0 260 222" role="img" aria-label="Calibration plot of a well-calibrated model: observed risk tracks predicted probability along the diagonal.">
+            <line class="axis" x1="44" y1="180" x2="244" y2="180"/><line class="axis" x1="44" y1="180" x2="44" y2="18"/>
+            <line class="ideal" x1="44" y1="180" x2="234" y2="30"/>
+            <circle class="pt" cx="63" cy="168" r="4.5"/><circle class="pt" cx="82" cy="147" r="4.5"/><circle class="pt" cx="101" cy="138" r="4.5"/><circle class="pt" cx="120" cy="117" r="4.5"/><circle class="pt" cx="139" cy="106" r="4.5"/><circle class="pt" cx="158" cy="86" r="4.5"/><circle class="pt" cx="177" cy="76" r="4.5"/><circle class="pt" cx="196" cy="57" r="4.5"/><circle class="pt" cx="215" cy="48" r="4.5"/>
+            <text class="t t--muted" x="44" y="196" text-anchor="middle">0</text><text class="t t--muted" x="234" y="196" text-anchor="middle">1</text>
+            <text class="t t--muted" x="36" y="184" text-anchor="end">0</text><text class="t t--muted" x="36" y="34" text-anchor="end">1</text>
+            <text class="t t--muted" x="144" y="214" text-anchor="middle">Predicted probability</text>
+            <text class="t t--muted" transform="translate(14 100) rotate(-90)" text-anchor="middle">Observed risk</text>
+            <text class="t t--brand" x="56" y="36">AUC 0.74</text>
+          </svg>
+          <figcaption>Discrimination and calibration: the probabilities match what is observed. Illustrative data.</figcaption>
+        </figure>
+        <figure class="figure">
+          <svg class="diagram diagram--plot" viewBox="0 0 260 222" role="img" aria-label="Calibration plot of a miscalibrated model with the same AUC: observed risk rises more slowly than predicted probability, so the points fall below the diagonal.">
+            <line class="axis" x1="44" y1="180" x2="244" y2="180"/><line class="axis" x1="44" y1="180" x2="44" y2="18"/>
+            <line class="ideal" x1="44" y1="180" x2="234" y2="30"/>
+            <circle class="pt pt--off" cx="63" cy="159" r="4.5"/><circle class="pt pt--off" cx="82" cy="150" r="4.5"/><circle class="pt pt--off" cx="101" cy="144" r="4.5"/><circle class="pt pt--off" cx="120" cy="134" r="4.5"/><circle class="pt pt--off" cx="139" cy="129" r="4.5"/><circle class="pt pt--off" cx="158" cy="119" r="4.5"/><circle class="pt pt--off" cx="177" cy="114" r="4.5"/><circle class="pt pt--off" cx="196" cy="102" r="4.5"/><circle class="pt pt--off" cx="215" cy="98" r="4.5"/>
+            <text class="t t--muted" x="44" y="196" text-anchor="middle">0</text><text class="t t--muted" x="234" y="196" text-anchor="middle">1</text>
+            <text class="t t--muted" x="36" y="184" text-anchor="end">0</text><text class="t t--muted" x="36" y="34" text-anchor="end">1</text>
+            <text class="t t--muted" x="144" y="214" text-anchor="middle">Predicted probability</text>
+            <text class="t t--muted" transform="translate(14 100) rotate(-90)" text-anchor="middle">Observed risk</text>
+            <text class="t t--brand" x="56" y="36">AUC 0.74</text>
+          </svg>
+          <figcaption>Discrimination only: the same ranking, but the probabilities overstate the risk, more so at the high end. Illustrative data.</figcaption>
+        </figure>
+      </div>
+
+      <div class="barrier-block">
+        <div class="prose">
+          <h3>Endpoints and reporting are heterogeneous</h3>
+          <p>The same complication is measured in different ways at different institutions. Xerostomia alone is recorded on at least three scales, which rarely agree patient by patient. A validation has to harmonise endpoint definitions before any model can be compared across sites.</p>
+        </div>
+        <div class="scales">
+          <div class="scale"><h4>Physician-rated (CTCAE)</h4><div class="ticks" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div><p>Grade 0 to 4 at clinic visits.</p></div>
+          <div class="scale"><h4>Patient-reported (EORTC)</h4><div class="ticks" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div><p>Quality-of-life questionnaire scores at fixed time points.</p></div>
+          <div class="scale"><h4>Saliva flow</h4><div class="ticks" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div><p>Stimulated flow in grams per five minutes, with quartile cut-offs.</p></div>
+        </div>
+      </div>
+
+      <div class="barrier-block">
+        <div class="prose">
+          <h3>Patient data cannot move easily</h3>
+          <p>Three barriers stand between any two institutions that want to test a model on each other's patients.</p>
+        </div>
+        <div class="barriers">
+          <div><h4>Privacy</h4><p>Under GDPR and HIPAA, anonymised data are still personal data when re-identification is plausible.</p></div>
+          <div><h4>Contracts</h4><p>Bilateral data-sharing agreements routinely take six to eighteen months to execute.</p></div>
+          <div><h4>Ownership</h4><p>Some trial datasets sit behind cooperative-group or commercial intellectual property.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Seven commitments ============ -->
+  <section class="section section--band" id="commitments" aria-labelledby="commitments-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="commitments-heading">Seven commitments</h2>
+        <p>Every validation the consortium runs follows all seven.</p>
+      </div>
+
+      <div class="principle">
+        <div class="prose">
+          <h3 id="share-models">Share models, not data</h3>
+          <p>The code travels. Patient data stay put. A model and its analysis plan are packaged in a container that each participating institution runs on its own patients, behind its own firewall. What comes back is a set of summary statistics, never patient-level values. This removes the privacy, contract and ownership barriers at once, because no patient data ever leave an institution.</p>
+        </div>
+        <figure class="figure">
+          <svg class="diagram" viewBox="0 0 520 300" role="img" aria-label="Diagram: a containerised model with its locked analysis plan is sent to four institutions, here Memorial Sloan Kettering, UMCG, MD Anderson and Lund; each returns summary statistics only.">
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow-head" d="M0,0 L10,5 L0,10 z"/></marker>
+              <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow-head--muted" d="M0,0 L10,5 L0,10 z"/></marker>
+            </defs>
+            <rect class="box box--solid" x="175" y="118" width="170" height="64" rx="8"/>
+            <text class="t t--inv" x="260" y="145" text-anchor="middle">Containerised model</text>
+            <text class="t t--inv" x="260" y="165" text-anchor="middle">+ locked analysis plan</text>
+            <g>
+              <circle class="box" cx="70" cy="70" r="46"/><text class="t t--brand" x="70" y="67" text-anchor="middle">MSK</text><text class="t t--muted" x="70" y="84" text-anchor="middle">New York</text>
+              <circle class="box" cx="450" cy="70" r="46"/><text class="t t--brand" x="450" y="67" text-anchor="middle">UMCG</text><text class="t t--muted" x="450" y="84" text-anchor="middle">Groningen</text>
+              <circle class="box" cx="70" cy="230" r="46"/><text class="t t--brand" x="70" y="227" text-anchor="middle">MD Anderson</text><text class="t t--muted" x="70" y="244" text-anchor="middle">Houston</text>
+              <circle class="box" cx="450" cy="230" r="46"/><text class="t t--brand" x="450" y="227" text-anchor="middle">Lund</text><text class="t t--muted" x="450" y="244" text-anchor="middle">Sweden</text>
+            </g>
+            <!-- code travels out (solid) -->
+            <line class="arrow" x1="180" y1="124" x2="112" y2="86" marker-end="url(#ah)"/>
+            <line class="arrow" x1="340" y1="124" x2="408" y2="86" marker-end="url(#ah)"/>
+            <line class="arrow" x1="180" y1="176" x2="112" y2="214" marker-end="url(#ah)"/>
+            <line class="arrow" x1="340" y1="176" x2="408" y2="214" marker-end="url(#ah)"/>
+            <!-- summary statistics return (dashed) -->
+            <line class="arrow arrow--dash" x1="100" y1="106" x2="166" y2="142" marker-end="url(#ahm)"/>
+            <line class="arrow arrow--dash" x1="420" y1="106" x2="354" y2="142" marker-end="url(#ahm)"/>
+            <line class="arrow arrow--dash" x1="100" y1="194" x2="166" y2="158" marker-end="url(#ahm)"/>
+            <line class="arrow arrow--dash" x1="420" y1="194" x2="354" y2="158" marker-end="url(#ahm)"/>
+            <g>
+              <line class="arrow" x1="150" y1="282" x2="190" y2="282" marker-end="url(#ah)"/><text class="t t--muted" x="198" y="286">Code, analysis plan, container</text>
+              <line class="arrow arrow--dash" x1="150" y1="266" x2="190" y2="266" marker-end="url(#ahm)"/><text class="t t--muted" x="198" y="270">Summary statistics only</text>
+            </g>
+          </svg>
+          <figcaption>Four member institutions shown as an example; a validation involves at least three institutions independent of the developer.</figcaption>
+        </figure>
+      </div>
+
+      <div class="principle">
+        <div class="prose">
+          <h3 id="pre-register">Pre-register the analysis</h3>
+          <p>The question is locked before anyone touches the data. A statistical analysis plan states the clinical question, the cohort definitions, the endpoints, the model exactly as published, and the performance measures. It is circulated to all sites, revised, and then locked and version-pinned. Each site runs the locked code; nothing is tuned after the results are seen. Reporting follows the TRIPOD statement.<sup><a href="#ref-tripod">5</a>,<a href="#ref-tripod-ee">6</a></sup></p>
+        </div>
+        <div class="figure">
+          <ol class="steps" aria-label="Pre-registration steps">
+            <li><span>Define the clinical question</span></li>
+            <li><span>Draft the analysis plan and circulate it to every site</span></li>
+            <li><span>Lock the plan, with the code version pinned</span></li>
+            <li><span>Each site runs the locked code on its own patients</span></li>
+            <li><span>Report the pooled summary results</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="prose">
+          <h3 id="three-institutions">At least three independent institutions</h3>
+          <p>A validation counts only when it has been run at three or more institutions that had no part in developing the model. The developer's own cohort may be included as a fourth, but it is reported separately and never substitutes for an independent one. Three independent cohorts are the minimum for telling a model that generalises from one that happened to fit a single population.</p>
+        </div>
+        <div class="prose">
+          <h3 id="open-code">Open analysis code</h3>
+          <p>Analyses are automated and re-runnable: the same container at every site, so there is no dependency drift between institutions, with Jupyter notebooks and R scripts that any group can inspect and execute. A single interface runs the whole analysis plan. The repository for each validation is public, so the analysis can be audited and repeated by anyone. An example layout:</p>
+          <pre class="tree">validate-models/
+├── analysis_plan.md
+├── notebooks/
+│   ├── xerostomia_validation.ipynb
+│   └── lymphopenia_validation.ipynb
+├── R/
+│   └── calibration.R
+├── containers/
+│   └── pycerr-segmentation.def
+└── README.md</pre>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="prose">
+          <h3 id="aggregated">Aggregated results only</h3>
+          <p>Sites return summary statistics, not patient records: performance measures, calibration curves and cohort descriptions, with small cells suppressed so that no value could identify a patient. Pooled analyses are run on these aggregates.</p>
+        </div>
+        <div class="prose">
+          <h3 id="both">Discrimination and calibration, always both</h3>
+          <p><strong>Discrimination</strong> asks whether the model ranks patients in the right order, measured by the AUC or C-statistic. Useless rankings mean no clinical benefit. <strong>Calibration</strong> asks whether the model's probabilities are numerically correct, measured by calibration-in-the-large and the calibration slope. Miscalibrated probabilities mean wrong treatment thresholds. Every VALIDATE report includes both, because calibration drift between populations and treatment eras is the most common way a published model fails.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="prose">
+          <h3 id="inform">Inform, do not prescribe</h3>
+          <p>Guidelines are not the consortium's to write. VALIDATE produces pre-registered, multi-cohort evidence about a published model and passes it to the professional societies. ESTRO, ASTRO and others consider that evidence in their own formal processes; recommendations are adopted into clinical pathways and planning standards from there; and clinicians use a model where the evidence supports it, documenting deviations where it does not.</p>
+        </div>
+        <div class="figure">
+          <ol class="steps" aria-label="How the evidence reaches the clinic">
+            <li><span><strong>VALIDATE</strong>: pre-registered, multi-cohort validation of a published model</span></li>
+            <li><span><strong>Society review</strong>: ESTRO, ASTRO and other societies consider the evidence in their formal processes</span></li>
+            <li><span><strong>Guideline or consensus</strong>: recommendations adopted into clinical pathways or planning standards</span></li>
+            <li><span><strong>Clinician</strong>: uses the model where the evidence supports it; documents deviation otherwise</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Open questions ============ -->
+  <section class="section" id="open-questions" aria-labelledby="oq-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="oq-heading">Open questions</h2>
+        <p>Four questions the consortium's approach does not yet settle.</p>
+      </div>
+      <ul class="open-questions">
+        <li>Zero data sharing limits some analyses. Individual-patient-data meta-analysis and joint refitting of a model both require pooled access, which the consortium's rules do not provide.</li>
+        <li>What counts as a successful external validation has been debated but not formally codified. No single calibration-slope band has been adopted as the pass criterion.</li>
+        <li>Inter-institutional variability in dose calculation, from treatment-planning-system voxelisation to vendor differences, is unquantified noise in every dose-based model.</li>
+        <li>Site-level selection bias remains a structural risk, and no formal mechanism to characterise it is yet in place.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ References ============ -->
+  <section class="section section--band section--tight" id="references" aria-labelledby="refs-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="refs-heading">References</h2>
+      </div>
+      <ol class="refs">
+        <li id="ref-cochrane">Takada T, Tambas M, Clementel E, et al. Prognostic models for radiation-induced complications after radiotherapy in head and neck cancer patients. <em>Cochrane Database Syst Rev</em> 2025;(9):CD014745. <a href="https://doi.org/10.1002/14651858.CD014745.pub2">doi:10.1002/14651858.CD014745.pub2</a></li>
+        <li id="ref-quantec-intro">Bentzen SM, Constine LS, Deasy JO, et al. Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): an introduction to the scientific issues. <em>Int J Radiat Oncol Biol Phys</em> 2010;76(3 Suppl):S3–S9. <a href="https://doi.org/10.1016/j.ijrobp.2009.09.040">doi:10.1016/j.ijrobp.2009.09.040</a></li>
+        <li id="ref-quantec-marks">Marks LB, Yorke ED, Jackson A, et al. Use of normal tissue complication probability models in the clinic. <em>Int J Radiat Oncol Biol Phys</em> 2010;76(3 Suppl):S10–S19. <a href="https://doi.org/10.1016/j.ijrobp.2009.07.1754">doi:10.1016/j.ijrobp.2009.07.1754</a></li>
+        <li id="ref-emami">Emami B, Lyman J, Brown A, et al. Tolerance of normal tissue to therapeutic irradiation. <em>Int J Radiat Oncol Biol Phys</em> 1991;21(1):109–122. <a href="https://doi.org/10.1016/0360-3016(91)90171-Y">doi:10.1016/0360-3016(91)90171-Y</a></li>
+        <li id="ref-tripod">Collins GS, Reitsma JB, Altman DG, Moons KGM. Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis (TRIPOD): the TRIPOD statement. <em>Ann Intern Med</em> 2015;162(1):55–63. <a href="https://doi.org/10.7326/M14-0697">doi:10.7326/M14-0697</a></li>
+        <li id="ref-tripod-ee">Moons KGM, Altman DG, Reitsma JB, et al. Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis (TRIPOD): explanation and elaboration. <em>Ann Intern Med</em> 2015;162(1):W1–W73. <a href="https://doi.org/10.7326/M14-0698">doi:10.7326/M14-0698</a></li>
+        <li id="ref-tripod-ai">Collins GS, Moons KGM, Dhiman P, et al. TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods. <em>BMJ</em> 2024;385:e078378. <a href="https://doi.org/10.1136/bmj-2023-078378">doi:10.1136/bmj-2023-078378</a></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="logo-light" src="assets/img/validate-logo-navy.png" alt="VALIDATE" width="942" height="372">
+    <img class="logo-dark" src="assets/img/validate-logo-white.png" alt="" width="942" height="372" aria-hidden="true">
+    <ul>
+      <li><a href="index.html#mission">Mission</a></li>
+      <li><a href="index.html#members">Members</a></li>
+      <li><a href="approach.html">How we work</a></li>
+      <li><a href="projects.html">Validation projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <span>VALIDATE consortium, validate4rt.org</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

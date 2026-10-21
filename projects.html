@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Validation projects — VALIDATE consortium</title>
+  <meta name="description" content="The four validation projects of the VALIDATE consortium: diffusion-weighted MRI and local control in head-and-neck cancer, parotid stem-cell-region dose and xerostomia, lymphopenia and survival in thoracic radiotherapy, and FDG-PET-informed prediction of radiation pneumonitis.">
+  <link rel="canonical" href="https://validate4rt.org/projects.html">
+  <meta name="theme-color" content="#002650">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Validation projects — VALIDATE consortium">
+  <meta property="og:description" content="Four areas where published radiotherapy decision-support models are being put to the test across member institutions.">
+  <meta property="og:url" content="https://validate4rt.org/projects.html">
+  <meta property="og:image" content="https://validate4rt.org/assets/img/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="VALIDATE consortium home">
+      <img class="logo-light" src="assets/img/validate-logo-navy.png" alt="VALIDATE" width="942" height="372">
+      <img class="logo-dark" src="assets/img/validate-logo-white.png" alt="" width="942" height="372" aria-hidden="true">
+      <span class="brand-text">VALIdation of Decision support models for rAdioThErapy</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="index.html#members">Members</a></li>
+        <li><a href="approach.html">How we work</a></li>
+        <li><a href="projects.html" aria-current="page">Validation projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h1 class="page-title">Validation projects</h1>
+        <p>Four areas where published models are being put to the test across member institutions. Each project follows the <a href="approach.html">seven commitments</a>: the model travels, the data stay put, the analysis plan is locked first, and both discrimination and calibration are reported. The working programme was last updated at the VALIDATE meeting at ESTRO 2026, 17 May 2026.</p>
+      </div>
+
+      <!-- ============ Project 1 ============ -->
+      <article class="project" id="local-control">
+        <div>
+          <h2>Local tumour control</h2>
+          <p class="endpoint">Diffusion-weighted MRI (ADC) as a predictor of local control in head-and-neck cancer</p>
+          <p class="leads">Leads: Warren Floyd and Sara Thrower (MD Anderson Cancer Center); René M. Winter (NTNU, Trondheim)</p>
+        </div>
+        <div class="body prose">
+          <h3>Scientific question</h3>
+          <p>Does the pre-treatment apparent diffusion coefficient (ADC) of the primary tumour, and of involved lymph nodes, predict local failure after definitive radiotherapy for head-and-neck cancer?</p>
+          <h3>Approach</h3>
+          <ul>
+            <li>Co-register diffusion-weighted images to T2-weighted images and exclude noisy diffusion voxels from the regions of interest.</li>
+            <li>Evaluate an expanded ADC band and a wider range of b-values.</li>
+            <li>Delineate tumours and nodes with AI auto-segmentation developed at Memorial Sloan Kettering, excluding cystic regions, and harmonise the imaging between participating sites.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ============ Project 2 ============ -->
+      <article class="project" id="xerostomia">
+        <div>
+          <h2>Long-term xerostomia</h2>
+          <p class="endpoint">Dose to the parotid stem-cell region compared with mean parotid dose</p>
+          <p class="leads">Leads: Maria Thor (Memorial Sloan Kettering Cancer Center); Peter van Luijk (UMCG); Per Munck af Rosenschöld (Lund University)</p>
+        </div>
+        <div class="body prose">
+          <h3>Scientific question</h3>
+          <p>Is the dose to the stem-cell-rich central-duct region of the parotid gland a stronger predictor of long-term xerostomia than the mean parotid dose, as reported in the model's development cohorts?<sup><a href="#ref-vanluijk">1</a></sup></p>
+          <h3>Approach</h3>
+          <ul>
+            <li>A containerised pyCERR pipeline delineates the parotid glands, the masseter and the van Luijk central-duct point of interest at every site.</li>
+            <li>Xerostomia endpoint definitions are harmonised across saliva-based, patient-reported and physician-rated scales.</li>
+            <li>A DICOM and outcome-data quality checklist is applied before any model is fitted.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ============ Project 3 ============ -->
+      <article class="project" id="lymphopenia">
+        <div>
+          <h2>Lymphopenia and survival in thoracic radiotherapy</h2>
+          <p class="endpoint">Published lymphopenia and overall-survival models across independent centres</p>
+          <p class="leads">Lead: Laura Cella (CNR, Naples)</p>
+        </div>
+        <div class="body prose">
+          <h3>Scientific question</h3>
+          <p>Do published models of radiotherapy-related lymphopenia, and of overall survival, generalise across independent centres treating thoracic cancers?</p>
+          <h3>Models under validation</h3>
+          <ul>
+            <li>The Manchester lymphopenia model, with predictors including mean lung dose, age, baseline lymphocyte count, concurrent chemotherapy and the volume of the thoracic vertebrae receiving 20 Gy, and the companion overall-survival model with lymphopenia, concurrent chemotherapy, radiotherapy duration and prescribed dose.<sup><a href="#ref-manchester">2</a></sup></li>
+            <li>The MD Anderson clinical nomogram developed in oesophageal cancer, with age, baseline lymphocyte count, body-mass index, treatment technique and planning-target volume.<sup><a href="#ref-vanrossum">3</a></sup></li>
+          </ul>
+          <h3>Approach</h3>
+          <ul>
+            <li>A common data-collection template and dose–volume analysis across the participating centres.</li>
+            <li>An open methods question is whether to use AI auto-contouring or each centre's clinical contours: robustness to contouring variability against the bias that automated contours may introduce.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ============ Project 4 ============ -->
+      <article class="project" id="pneumonitis">
+        <div>
+          <h2>Radiation pneumonitis</h2>
+          <p class="endpoint">Mean lung dose combined with pre-treatment FDG-PET uptake of normal lung</p>
+          <p class="leads">Lead: Maria Thor (Memorial Sloan Kettering Cancer Center); parallel interstitial-lung-disease track: Andrew Hope (Princess Margaret Cancer Centre)</p>
+        </div>
+        <div class="body prose">
+          <h3>Scientific question</h3>
+          <p>Does mean lung dose combined with the 90th percentile of FDG uptake (SUV-P90) in the normal lungs on pre-treatment PET predict early radiation pneumonitis, including immunotherapy-associated cases, across institutions?</p>
+          <h3>Models under validation</h3>
+          <ul>
+            <li>The Thor et al. model, developed in stage III non-small cell lung cancer treated with chemoradiation and immunotherapy and prospectively validated at the developing institution.<sup><a href="#ref-thor-jnm">4</a>,<a href="#ref-thor-phiro">5</a></sup></li>
+          </ul>
+          <h3>Approach</h3>
+          <ul>
+            <li>Apply the model to standard dose–volume data plus the pre-treatment FDG-PET SUV-P90 of the normalised lungs, metrics that existing dose–volume and PET pipelines already extract.</li>
+            <li>Compare calibration in immunotherapy-treated and non-immunotherapy sub-cohorts.</li>
+            <li>A deep-learning pneumonitis model with peritumoral attention maps is a candidate secondary arm; an interstitial-lung-disease scoring approach from Princess Margaret runs as a parallel track.</li>
+          </ul>
+        </div>
+      </article>
+
+      <p class="contact-note">Investigators with a published model they would like to see validated, and institutions that would like to take part, are welcome to <a href="index.html#contact">contact the Chairs</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ References ============ -->
+  <section class="section section--band section--tight" id="references" aria-labelledby="refs-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="refs-heading">References</h2>
+      </div>
+      <ol class="refs">
+        <li id="ref-vanluijk">van Luijk P, Pringle S, Deasy JO, et al. Sparing the region of the salivary gland containing stem cells preserves saliva production after radiotherapy for head and neck cancer. <em>Sci Transl Med</em> 2015;7(305):305ra147. <a href="https://doi.org/10.1126/scitranslmed.aac4441">doi:10.1126/scitranslmed.aac4441</a></li>
+        <li id="ref-manchester">Abravan A, Faivre-Finn C, Kennedy J, McWilliam A, van Herk M. Radiotherapy-related lymphopenia affects overall survival in patients with lung cancer. <em>J Thorac Oncol</em> 2020;15(10):1624–1635. <a href="https://doi.org/10.1016/j.jtho.2020.06.008">doi:10.1016/j.jtho.2020.06.008</a></li>
+        <li id="ref-vanrossum">van Rossum PSN, Deng W, Routman DM, et al. Prediction of severe lymphopenia during chemoradiation therapy for esophageal cancer: development and validation of a pretreatment nomogram. <em>Pract Radiat Oncol</em> 2020;10(1):e16–e26. <a href="https://doi.org/10.1016/j.prro.2019.07.010">doi:10.1016/j.prro.2019.07.010</a></li>
+        <li id="ref-thor-jnm">Thor M, Lee C, Sun L, et al. An <sup>18</sup>F-FDG PET/CT and mean lung dose model to predict early radiation pneumonitis in stage III non-small cell lung cancer patients treated with chemoradiation and immunotherapy. <em>J Nucl Med</em> 2024;65(4):520–526. <a href="https://doi.org/10.2967/jnumed.123.266965">doi:10.2967/jnumed.123.266965</a></li>
+        <li id="ref-thor-phiro">Thor M, Apte A, Grkovski M, et al. Prospective validation of a pretreatment <sup>18</sup>F-FDG PET/CT and mean lung dose model for early radiation pneumonitis. <em>Phys Imaging Radiat Oncol</em> 2025;36:100844. <a href="https://doi.org/10.1016/j.phro.2025.100844">doi:10.1016/j.phro.2025.100844</a></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="logo-light" src="assets/img/validate-logo-navy.png" alt="VALIDATE" width="942" height="372">
+    <img class="logo-dark" src="assets/img/validate-logo-white.png" alt="" width="942" height="372" aria-hidden="true">
+    <ul>
+      <li><a href="index.html#mission">Mission</a></li>
+      <li><a href="index.html#members">Members</a></li>
+      <li><a href="approach.html">How we work</a></li>
+      <li><a href="projects.html">Validation projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <span>VALIDATE consortium, validate4rt.org</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
