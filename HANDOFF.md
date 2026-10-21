@@ -47,5 +47,6 @@ Brief from Joseph (2026-10-21): emphasise the **mission** and the **members**; t
 
 ## 6. Change log
 
-- 2026-10-21 · (pending first push) · Hero reworked at Joseph's request: mission sentence leads, member count without names, Chair/co-Chair demoted to a small line under the buttons.
-- 2026-10-21 · (pending first push) · Site created from the v6.1 consortium deck: three pages, member map, roster, approach, projects, references, README, this file.
+- 2026-10-21 · (pending commit) · Fix: the base `li + li` spacing was pushing the 2nd–5th navigation links (header and footer) and the project-area cards down by 0.35em; layout lists now reset it.
+- 2026-10-21 · pushed · Hero reworked at Joseph's request: mission sentence leads, member count without names, Chair/co-Chair demoted to a small line under the buttons.
+- 2026-10-21 · pushed (first commit) · Site created from the v6.1 consortium deck: three pages, member map, roster, approach, projects, references, README, this file.
