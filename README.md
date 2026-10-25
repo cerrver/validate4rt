@@ -64,7 +64,7 @@ The pages already carry `https://validate4rt.org/…` as their canonical and Ope
   npm run build-map
   ```
 
-  which rewrites `assets/img/membermap-world.svg` and `membermap-europe.svg`. If the new city is in Europe, give it a label offset in the `off` table. Update the "Eighteen cities, ten countries" caption in `index.html` by hand.
+  which rewrites `assets/img/membermap-world.svg` and `membermap-europe.svg`. If the new city is in Europe, give it a label offset in the `off` table. Update the "Twenty cities, eleven countries" caption in `index.html` by hand.
 - **Projects.** `projects.html`, one `<article class="project">` per project.
 - **Colours and type.** Tokens at the top of `assets/css/styles.css`. The marigold accent is reserved for the map pins and figure marks; text uses the navy of the logo.
 

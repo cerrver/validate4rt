@@ -22,10 +22,12 @@ const cities = [
   { id: "tampa", city: "Tampa", country: "USA", ll: [-82.457, 27.951], inst: ["Moffitt Cancer Center"] },
   { id: "philadelphia", city: "Philadelphia", country: "USA", ll: [-75.165, 39.953], inst: ["University of Pennsylvania"] },
   { id: "ann-arbor", city: "Ann Arbor", country: "USA", ll: [-83.743, 42.281], inst: ["University of Michigan"] },
+  { id: "miami", city: "Miami", country: "USA", ll: [-80.191, 25.762], inst: ["Sylvester Comprehensive Cancer Center, University of Miami"] },
   { id: "toronto", city: "Toronto", country: "Canada", ll: [-79.383, 43.653], inst: ["Princess Margaret Cancer Centre"] },
   { id: "manchester", city: "Manchester", country: "United Kingdom", ll: [-2.244, 53.483], inst: ["The University of Manchester"], eu: true },
   { id: "groningen", city: "Groningen", country: "Netherlands", ll: [6.566, 53.219], inst: ["University Medical Center Groningen"], eu: true },
   { id: "amsterdam", city: "Amsterdam", country: "Netherlands", ll: [4.897, 52.370], inst: ["Netherlands Cancer Institute"], eu: true },
+  { id: "tuebingen", city: "Tübingen", country: "Germany", ll: [9.056, 48.521], inst: ["University Hospital Tübingen"], eu: true },
   { id: "milan", city: "Milan", country: "Italy", ll: [9.190, 45.464], inst: ["IRCCS Ospedale San Raffaele", "Fondazione IRCCS Istituto Nazionale dei Tumori"], eu: true },
   { id: "naples", city: "Naples", country: "Italy", ll: [14.268, 40.852], inst: ["CNR Institute of Biostructures and Bioimaging"], eu: true },
   { id: "barcelona", city: "Barcelona", country: "Spain", ll: [2.173, 41.385], inst: ["Vall d’Hebron Institute of Oncology"], eu: true },
@@ -80,7 +82,7 @@ const epath = d3.geoPath(eu).digits(1);
 const landE = simplifiedLand("world-atlas/land-50m.json", 0.22, 5);
 let e = `<svg class="membermap membermap--europe" viewBox="0 0 ${IW} ${IH}" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mape-title mape-desc">\n`;
 e += `<title id="mape-title">European VALIDATE member institutions</title>\n`;
-e += `<desc id="mape-desc">Enlarged view of the European member cities: Manchester, Groningen, Amsterdam, Milan, Naples, Barcelona, Lund, Stockholm, Copenhagen, Odense and Trondheim.</desc>\n`;
+e += `<desc id="mape-desc">Enlarged view of the European member cities: Manchester, Groningen, Amsterdam, Tübingen, Milan, Naples, Barcelona, Lund, Stockholm, Copenhagen, Odense and Trondheim.</desc>\n`;
 e += STYLE;
 e += `<rect class="map-frame" x="0.5" y="0.5" width="${IW - 1}" height="${IH - 1}"/>\n`;
 e += `<path class="map-land" d="${epath(landE)}"/>\n`;
@@ -89,7 +91,7 @@ e += `<g class="map-pins">\n`;
 const off = {
   manchester: [-11, 5, "end"], groningen: [11, 9, "start"], amsterdam: [-11, 13, "end"], milan: [11, 5, "start"],
   naples: [11, 5, "start"], barcelona: [11, 5, "start"], lund: [11, 5, "start"], stockholm: [11, 5, "start"],
-  copenhagen: [-11, -3, "end"], odense: [-11, 15, "end"], trondheim: [11, 5, "start"],
+  copenhagen: [-11, -3, "end"], odense: [-11, 15, "end"], trondheim: [11, 5, "start"], tuebingen: [11, 5, "start"],
 };
 const nudge = { copenhagen: -2.5, lund: 2.5 }; // horizontal displacement (panel units, ≈15 km) so the two dots do not merge
 for (const c of cities.filter(c => c.eu)) {
